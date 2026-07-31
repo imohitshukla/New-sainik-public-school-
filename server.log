@@ -1,0 +1,9 @@
+Server is running on http://localhost:3005
+--- New Inquiry Received ---
+Parent: Test Parent
+Phone: 1234567890
+Email: test@test.com
+Child: Test Child
+Grade: 1
+Message: Test message
+----------------------------

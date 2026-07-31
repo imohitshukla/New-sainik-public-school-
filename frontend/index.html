@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Sainik Public School | Heritage Meets Modern Web</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpeg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <style>
+        /* Specific Styles for index.html */
+        .hero {
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .hero-visual {
+            position: relative;
+        }
+        
+        .hero-img-main {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--radius-organic-1);
+            box-shadow: var(--shadow-diffused);
+        }
+        
+        .hero-img-secondary {
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 350px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: var(--radius-organic-2);
+            box-shadow: var(--shadow-hover);
+            border: 8px solid var(--color-base);
+        }
+
+        /* Notice Board Section (Overlapping) */
+        .notice-section {
+            margin-top: -80px;
+            position: relative;
+            z-index: 20;
+            padding-bottom: 4rem;
+        }
+        
+        .notice-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Heritage Pillars */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .pillar-card {
+            position: relative;
+            padding: 3.5rem 2.5rem;
+            background: var(--color-base);
+            border-radius: var(--radius-organic-3);
+            box-shadow: var(--shadow-diffused);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+        
+        .pillar-number {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-family: var(--font-heading);
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            opacity: 0.05;
+            line-height: 1;
+            pointer-events: none;
+        }
+        
+        .pillar-card h3 {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .pillar-card p {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        /* Quick Info Banner */
+        .quick-info-banner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 3rem 0;
+        }
+        
+        .quick-info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .quick-info-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--color-primary-dark);
+        }
+        
+        .quick-info-text h4 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.25rem;
+            color: var(--color-accent);
+        }
+        
+        .quick-info-text p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .hero-content p {
+                margin: 0 auto 2rem;
+            }
+            .hero-cta {
+                justify-content: center;
+            }
+            .hero-img-secondary {
+                display: none;
+            }
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            .quick-info-banner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: left;
+            }
+            .quick-info-item {
+                justify-content: flex-start;
+                padding-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    +91 78872 99111, +91 91983 43345
+                </span>
+                <span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    pathakpradeep2010@gmail.com
+                </span>
+                <span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Bajrang Chauraha, Banda
+                </span>
+            </div>
+            <div class="top-bar-social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-container" style="text-decoration: none;">
+                <img src="assets/images/logo.jpeg" alt="New Sainik Public School Logo" style="width: 50px; height: 50px; object-fit: contain;">
+                <div class="logo-text">
+                    <h1>New Sainik</h1>
+                    <p>Public School</p>
+                </div>
+            </a>
+            
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="about.html#academics">Academics</a>
+                <a href="index.html#gallery">Gallery</a>
+                <a href="index.html#transport">Transport</a>
+                <a href="fees.html">Fee Structure</a>
+                <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Admission Inquiry</a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Vision. Excellence. Discovery.</h1>
+                    <p>Fostering holistic development, patriotism, and discipline while nurturing critical thinking and resilience in the heart of Banda.</p>
+                    <div class="hero-cta">
+                        <a href="contact.html" class="btn btn-primary">Apply Now</a>
+                        <a href="about.html" class="btn" style="border-color: var(--color-primary-dark); color: var(--color-primary-dark);">Discover Our Heritage</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="assets/images/school_building.jpg" alt="Main School Building" class="hero-img-main">
+                    <img src="assets/images/hero_secondary.jpeg" alt="School Transport" class="hero-img-secondary">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section style="background: url('assets/images/school_building.jpg') center/cover fixed; padding: 0;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <div style="background-color: rgba(242, 166, 90, 0.85); padding: 5rem 2rem; text-align: center; color: white;">
+                <h2 style="font-size: 4rem; margin-bottom: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">12+</h2>
+                <p style="font-size: 1.25rem; font-weight: 600; margin: 0; color: white; text-transform: uppercase; letter-spacing: 1px;">Teachers</p>
+            </div>
+            <div style="background-color: rgba(106, 76, 156, 0.85); padding: 5rem 2rem; text-align: center; color: white;">
+                <h2 style="font-size: 4rem; margin-bottom: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">500+</h2>
+                <p style="font-size: 1.25rem; font-weight: 600; margin: 0; color: white; text-transform: uppercase; letter-spacing: 1px;">Students</p>
+            </div>
+            <div style="background-color: rgba(217, 100, 58, 0.85); padding: 5rem 2rem; text-align: center; color: white;">
+                <h2 style="font-size: 4rem; margin-bottom: 0.5rem; font-weight: 700; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">10+</h2>
+                <p style="font-size: 1.25rem; font-weight: 600; margin: 0; color: white; text-transform: uppercase; letter-spacing: 1px;">Buses</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notice Board Overlay -->
+    <section class="notice-section">
+        <div class="container">
+            <div class="notice-container">
+                <div class="notice-board">
+                    <div class="notice-board-header">
+                        <h3>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            Notice Board
+                        </h3>
+                    </div>
+                    <div class="notice-board-content">
+                        <div class="notice-item" style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <div style="flex-grow: 1;">
+                                <span class="notice-date">24 Jul 2026</span>
+                                <a href="#" class="notice-title" style="display: block; margin-top: 0.25rem;">Admissions open for Academic Year 2026-2027. Apply before August 15th.</a>
+                            </div>
+                            <a href="#" title="Download PDF" style="color: var(--color-primary); padding: 0.5rem; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="notice-item" style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <div style="flex-grow: 1;">
+                                <span class="notice-date">18 Jul 2026</span>
+                                <a href="#" class="notice-title" style="display: block; margin-top: 0.25rem;">Annual Sports Meet scheduled for next month. Students are requested to register.</a>
+                            </div>
+                            <a href="#" title="Download PDF" style="color: var(--color-primary); padding: 0.5rem; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="notice-item" style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <div style="flex-grow: 1;">
+                                <span class="notice-date">10 Jul 2026</span>
+                                <a href="#" class="notice-title" style="display: block; margin-top: 0.25rem;">Parent-Teacher Meeting for all classes this Saturday from 9 AM to 12 PM.</a>
+                            </div>
+                            <a href="#" title="Download PDF" style="color: var(--color-primary); padding: 0.5rem; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="notice-item" style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <div style="flex-grow: 1;">
+                                <span class="notice-date">05 Jul 2026</span>
+                                <a href="#" class="notice-title" style="display: block; margin-top: 0.25rem;">Updates regarding the new uniform policy and transport fees.</a>
+                            </div>
+                            <a href="#" title="Download PDF" style="color: var(--color-primary); padding: 0.5rem; transition: transform 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="notice-board-footer">
+                        <a href="#">View All Circulars &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Pillars -->
+    <section class="section bg-alt">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+                <h2 style="font-size: 3rem;">The VED Philosophy</h2>
+                <p style="font-size: 1.1rem; line-height: 1.6; opacity: 0.9;">At New Sainik Public School, education transcends the classroom. Our foundational VED Philosophy—Vision, Excellence, and Discovery—is the cornerstone of our approach. We are committed to nurturing not just academic prowess, but the character, discipline, and innovative spirit required to lead in a rapidly evolving world.</p>
+            </div>
+            
+            <div class="pillars-grid" style="align-items: stretch;">
+                <div class="pillar-card">
+                    <div class="pillar-number">V</div>
+                    <h3>Vision</h3>
+                    <p>Fostering a forward-looking mindset and deep-rooted patriotism. We believe in holistic development that prepares students for the future by instilling a strong moral compass and a global perspective. Our vision is to cultivate responsible, empathetic citizens who are equipped to make a meaningful and positive impact on society.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-number">E</div>
+                    <h3>Excellence</h3>
+                    <p>Promoting unwavering academic rigor and character discipline. Excellence at our school is not an act, but a daily habit. We push boundaries through outstanding achievements across a comprehensive range of co-curricular and athletic activities, ensuring our students strive for their absolute personal best in every endeavor.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-number">D</div>
+                    <h3>Discovery</h3>
+                    <p>Encouraging boundless intellectual curiosity and sharp critical thinking. We foster an environment of collaborative learning where students are empowered to ask questions, test boundaries, and learn from experience. By championing lifelong resilience, we equip our students to turn every challenge into a profound discovery.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Banner -->
+    <section style="background: linear-gradient(rgba(13, 31, 23, 0.85), rgba(13, 31, 23, 0.9)), url('assets/images/trust_bg.jpeg') center/cover fixed; padding: 6rem 2rem; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <div class="container" style="max-width: 800px;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 50%; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.2);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h2 style="font-size: 2.5rem; margin: 0; color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">A Secure Environment for Learning</h2>
+            </div>
+            <p style="font-size: 1.15rem; line-height: 1.7; color: rgba(255,255,255,0.9); margin: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
+                At New Sainik Public School, we prioritize your child's safety above all else. Our entire campus is under constant, 24/7 CCTV surveillance, covering classrooms, corridors, and outdoor play areas. Along with our dedicated and vigilant security personnel manning the entry and exit points, we maintain a strictly monitored, highly secure, and nurturing haven. This comprehensive security infrastructure ensures that parents have complete peace of mind, while students can freely and safely focus on their learning and personal growth.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">
+                <h2 style="font-size: 3rem;">Gallery</h2>
+                <p>Glimpses of life, learning, and celebration at New Sainik Public School.</p>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap;" id="gallery-filters">
+                <button class="filter-btn active" data-filter="all" style="padding: 0.5rem 1.5rem; border: 1px solid var(--color-primary); background: var(--color-primary); color: white; border-radius: 30px; cursor: pointer; transition: all 0.3s ease;">All</button>
+                <button class="filter-btn" data-filter="campus" style="padding: 0.5rem 1.5rem; border: 1px solid var(--color-primary); background: transparent; color: var(--color-primary); border-radius: 30px; cursor: pointer; transition: all 0.3s ease;">Campus Grounds</button>
+                <button class="filter-btn" data-filter="classroom" style="padding: 0.5rem 1.5rem; border: 1px solid var(--color-primary); background: transparent; color: var(--color-primary); border-radius: 30px; cursor: pointer; transition: all 0.3s ease;">Classroom Learning</button>
+                <button class="filter-btn" data-filter="sports" style="padding: 0.5rem 1.5rem; border: 1px solid var(--color-primary); background: transparent; color: var(--color-primary); border-radius: 30px; cursor: pointer; transition: all 0.3s ease;">Sports & Activities</button>
+                <button class="filter-btn" data-filter="transport" style="padding: 0.5rem 1.5rem; border: 1px solid var(--color-primary); background: transparent; color: var(--color-primary); border-radius: 30px; cursor: pointer; transition: all 0.3s ease;">Transport</button>
+            </div>
+
+            <div id="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                <!-- Campus -->
+                <div class="gallery-item" data-category="campus" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/ground.jpeg', 'Lush Green Campus Lawn')">
+                    <img src="assets/images/ground.jpeg" alt="Lush Green Campus Lawn" style="width: 100%; height: 250px; object-fit: cover; display: block; filter: contrast(1.1) saturate(1.25) brightness(1.05); transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" data-category="campus" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/green_campus.jpeg', 'Green Campus Path')">
+                    <img src="assets/images/green_campus.jpeg" alt="Green Campus Path" style="width: 100%; height: 250px; object-fit: cover; display: block; filter: contrast(1.1) saturate(1.25) brightness(1.05); transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <!-- Classroom -->
+                <div class="gallery-item" data-category="classroom" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/classroom1.jpeg', 'Interactive Learning')">
+                    <img src="assets/images/classroom1.jpeg" alt="Interactive Learning" style="width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" data-category="classroom" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/classroom2.jpeg', 'Classroom Learning')">
+                    <img src="assets/images/classroom2.jpeg" alt="Classroom Learning" style="width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" data-category="classroom" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/classroom_new_1.jpeg', 'Biology Skeleton Model')">
+                    <img src="assets/images/classroom_new_1.jpeg" alt="Biology Skeleton Model" style="width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" data-category="classroom" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/classroom_new_2.jpeg', 'Geography Globe Session')">
+                    <img src="assets/images/classroom_new_2.jpeg" alt="Geography Globe Session" style="width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" data-category="classroom" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/classroom_new_3.jpeg', 'Biology Ear Model')">
+                    <img src="assets/images/classroom_new_3.jpeg" alt="Biology Ear Model" style="width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" data-category="classroom" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/classroom_new_4.jpeg', 'Geography Lesson')">
+                    <img src="assets/images/classroom_new_4.jpeg" alt="Geography Lesson" style="width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" data-category="classroom" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/classroom_new_5.jpeg', 'Interactive Classroom Learning')">
+                    <img src="assets/images/classroom_new_5.jpeg" alt="Interactive Classroom Learning" style="width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <!-- Sports -->
+                <div class="gallery-item" data-category="sports" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/sports1.png', 'Outdoor Sports')">
+                    <img src="assets/images/sports1.png" alt="Outdoor Sports" style="width: 100%; height: 250px; object-fit: cover; display: block; filter: contrast(1.1) saturate(1.2); transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="gallery-item" data-category="sports" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/sports2.png', 'Indoor Games')">
+                    <img src="assets/images/sports2.png" alt="Indoor Games" style="width: 100%; height: 250px; object-fit: cover; display: block; filter: contrast(1.1) saturate(1.2); transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <!-- Transport -->
+                <div class="gallery-item" data-category="transport" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;" onclick="openLightbox('assets/images/transport.jpeg', 'School Transport Fleet')">
+                    <img src="assets/images/transport.jpeg" alt="School Transport Fleet" style="width: 100%; height: 250px; object-fit: cover; display: block; filter: contrast(1.05) saturate(1.1); transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extra Curricular Activities -->
+    <section class="section bg-alt" id="activities">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">
+                <h2 style="font-size: 3rem;">Extra Curricular Activities</h2>
+                <p>Developing teamwork, physical fitness, and leadership through indoor and outdoor sports.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-elevated);">
+                    <div style="overflow: hidden;">
+                        <img src="assets/images/sports1.png" alt="Outdoor Sports - Football" style="width: 100%; height: 350px; object-fit: cover; display: block; filter: contrast(1.1) saturate(1.2); transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: 1.5rem; background: var(--color-base);">
+                        <h3 style="margin-bottom: 0.5rem;">Outdoor Sports</h3>
+                        <p style="opacity: 0.8; margin: 0;">Expansive grounds for football, cricket, and athletics to keep our students active and energized.</p>
+                    </div>
+                </div>
+                
+                <div style="border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-elevated);">
+                    <div style="overflow: hidden;">
+                        <img src="assets/images/sports2.png" alt="Outdoor Sports - Kabaddi" style="width: 100%; height: 350px; object-fit: cover; display: block; filter: contrast(1.1) saturate(1.2); transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: 1.5rem; background: var(--color-base);">
+                        <h3 style="margin-bottom: 0.5rem;">Traditional & Indoor Games</h3>
+                        <p style="opacity: 0.8; margin: 0;">Dedicated facilities for traditional games like Kabaddi alongside modern indoor sports infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transport Section -->
+    <section class="section" id="transport">
+        <div class="container">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">
+                <h2 style="font-size: 3rem;">Safe & Reliable Transport</h2>
+                <p>Ensuring a comfortable and secure commute for our students across all major routes.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 0; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base);">
+                <img src="assets/images/transport.jpeg" alt="School Transport Fleet" style="width: 100%; max-height: 500px; object-fit: cover; display: block; filter: contrast(1.05) saturate(1.1);">
+                <div style="padding: 3rem 2rem; text-align: center;">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; background-color: var(--color-accent); border-radius: 50%; margin-bottom: 1.5rem;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">Extensive Transport Network</h3>
+                    <p style="opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.7; font-size: 1.15rem;">
+                        Our fleet of <strong>10+ buses</strong> provides comprehensive coverage across all areas in and around Banda. 
+                        Operated by well-trained, experienced drivers, we guarantee the highest standards of safety and punctuality 
+                        for your child's daily commute.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Banner -->
+    <section class="bg-primary">
+        <div class="container">
+            <div class="quick-info-banner">
+                <div class="quick-info-item">
+                    <div class="quick-info-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div class="quick-info-text">
+                        <h4>School Timings</h4>
+                        <p>Monday - Saturday: 8:00 AM to 2:00 PM</p>
+                    </div>
+                </div>
+                <div class="quick-info-item">
+                    <div class="quick-info-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <div class="quick-info-text">
+                        <h4>Location</h4>
+                        <p>Banda, Uttar Pradesh, 210001</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-watermark">S</div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo-container" style="margin-bottom: 1.5rem;">
+                        <img src="assets/images/logo.jpeg" alt="New Sainik Public School Logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 5px;">
+                        <div class="logo-text">
+                            <h2 style="color: var(--color-base); margin: 0; font-size: 1.5rem;">New Sainik</h2>
+                            <p style="color: var(--color-accent);">Public School</p>
+                        </div>
+                    </div>
+                    <p style="opacity: 0.8; max-width: 300px;">Nurturing minds, building character, and shaping the future leaders of our nation.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#academics">Academics</a></li>
+                        <li><a href="contact.html">Admissions</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#transport">Transport</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li>Bajrang Chauraha, Siyarpaha Gudhankalan<br>Naraini, Banda-210129</li>
+                        <li style="margin-top: 1rem;">Phone: +91 78872 99111<br>+91 91983 43345</li>
+                        <li>Email: pathakpradeep2010@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 New Sainik Public School. All rights reserved. Designed with precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" style="display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+        <span onclick="closeLightbox()" style="position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000;">&times;</span>
+        <img id="lightbox-img" src="" style="max-width: 90%; max-height: 90%; object-fit: contain; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+        <div id="lightbox-caption" style="position: absolute; bottom: 20px; left: 0; width: 100%; text-align: center; color: white; font-size: 1.25rem; font-weight: 300;"></div>
+    </div>
+
+    <script>
+        // Gallery Filter Logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.style.background = 'transparent';
+                    b.style.color = 'var(--color-primary)';
+                });
+                btn.classList.add('active');
+                btn.style.background = 'var(--color-primary)';
+                btn.style.color = 'white';
+                
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        function openLightbox(src, caption) {
+            lightboxImg.src = src;
+            lightboxCaption.textContent = caption;
+            lightbox.style.display = 'flex';
+            setTimeout(() => {
+                lightbox.style.opacity = '1';
+            }, 10);
+        }
+
+        function closeLightbox() {
+            lightbox.style.opacity = '0';
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+            }, 300);
+        }
+        
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

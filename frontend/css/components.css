@@ -1,0 +1,232 @@
+/* =========================================
+   COMPONENTS
+   ========================================= */
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-base);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+}
+
+.btn-accent:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* --- The Notice Board Component --- */
+.notice-board {
+  background-color: var(--color-base-alt);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-diffused);
+  border-top: 6px solid var(--color-primary);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.notice-board-header {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(30, 86, 49, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notice-board-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.notice-board-header h3 svg {
+  color: var(--color-accent);
+}
+
+.notice-board-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: 400px; /* Adjust as needed */
+  flex-grow: 1;
+}
+
+.notice-item {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed rgba(30, 86, 49, 0.2);
+}
+.notice-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.notice-date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.notice-title {
+  font-weight: 600;
+  color: var(--color-text);
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.notice-title:hover {
+  color: var(--color-accent);
+}
+
+.notice-board-footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(30, 86, 49, 0.1);
+}
+.notice-board-footer a {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* --- Organic Image Masking --- */
+.img-organic-1 { border-radius: var(--radius-organic-1); overflow: hidden; }
+.img-organic-2 { border-radius: var(--radius-organic-2); overflow: hidden; }
+.img-organic-3 { border-radius: var(--radius-organic-3); overflow: hidden; }
+
+/* Image overlap utilities */
+.img-overlap-wrapper {
+  position: relative;
+  z-index: 1;
+}
+.img-overlap-content {
+  position: relative;
+  z-index: 2;
+  margin-top: -50px; /* Creates the overlap */
+  background: var(--color-base);
+  padding: 2rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-diffused);
+}
+
+/* --- Profile Cards (Principal / Staff) --- */
+.profile-card {
+  background-color: var(--color-base);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-diffused);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.profile-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.profile-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.profile-card:hover .profile-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.profile-content {
+  padding: 1.5rem;
+}
+
+.profile-name {
+  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.profile-role {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.profile-desc {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* --- Forms --- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-dark);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: #F5F2E6; /* Pale background for inputs */
+  border: 1px solid transparent; /* Hidden border initially */
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  background-color: var(--color-base);
+  border-color: var(--color-primary); /* Thin green border on focus */
+  box-shadow: 0 0 0 3px rgba(30, 86, 49, 0.1);
+}
+
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}

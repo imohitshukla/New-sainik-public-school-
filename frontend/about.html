@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | New Sainik Public School</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpeg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <style>
+        .page-header {
+            padding: 6rem 0 4rem;
+            text-align: center;
+            background-color: var(--color-secondary);
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 4rem;
+            padding: 4rem 0;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--color-text);
+            font-weight: 500;
+            border-left: 2px solid transparent;
+            padding-left: 1rem;
+        }
+        
+        .sidebar-nav a:hover, .sidebar-nav a.active {
+            color: var(--color-primary);
+            border-left-color: var(--color-primary);
+        }
+        
+        .content-section {
+            margin-bottom: 4rem;
+        }
+        
+        .content-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+        
+        /* Principal's Desk */
+        .principal-desk {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+        
+        .staff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+            .principal-desk {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Same as index) -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo-container" style="text-decoration: none;">
+                <img src="assets/images/logo.jpeg" alt="New Sainik Public School Logo" style="width: 50px; height: 50px; object-fit: contain;">
+                <div class="logo-text">
+                    <h1>New Sainik</h1>
+                    <p>Public School</p>
+                </div>
+            </a>
+            
+            <nav class="main-nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="about.html#academics">Academics</a>
+                <a href="index.html#gallery">Gallery</a>
+                <a href="index.html#transport">Transport</a>
+                <a href="fees.html">Fee Structure</a>
+                <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1.5rem; margin-left: 1rem;">Admission Inquiry</a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Our Heritage</h1>
+            <p style="font-size: 1.25rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">Building a legacy of excellence in education since our foundation.</p>
+        </div>
+    </div>
+
+    <div class="container content-layout">
+        <aside class="sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#history" class="active">Our History</a></li>
+                <li><a href="#vision">Vision & Mission</a></li>
+                <li><a href="#academics">Academics & Holidays</a></li>
+                <li><a href="#student-life">Student Life</a></li>
+                <li><a href="#directors">Directors</a></li>
+                <li><a href="#principal">Principal's Desk</a></li>
+                <li><a href="#coordinator">Coordinator</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <section id="history" class="content-section">
+                <h2>Our History</h2>
+                <div class="img-overlap-wrapper">
+                    <img src="assets/images/school_building.jpg" alt="School Building" class="img-organic-2" style="width: 100%; height: 350px; object-fit: cover; box-shadow: var(--shadow-diffused);">
+                    <div class="img-overlap-content" style="max-width: 90%; margin-left: auto;">
+                        <p>Founded with the vision to provide quality education in Banda, New Sainik Public School has grown from a modest beginning to a premier institution. We blend traditional values with modern educational methodologies to prepare our students for global challenges.</p>
+                        <p>Our commitment to holistic education ensures that every child who walks through our gates is nurtured intellectually, emotionally, and physically.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="vision" class="content-section">
+                <h2>Vision & Mission</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+                    <div style="background: var(--color-base-alt); padding: 2rem; border-radius: var(--radius-sm); border-left: 4px solid var(--color-accent);">
+                        <h3 style="color: var(--color-accent);">Our Vision</h3>
+                        <p>Driven by our core values of <strong>Vision, Excellence, and Discovery (VED)</strong>, we aim to be an institution that empowers students to become patriotic, responsible, and visionary leaders of tomorrow.</p>
+                    </div>
+                    <div style="background: var(--color-primary-dark); color: var(--color-base); padding: 2rem; border-radius: var(--radius-sm); border-left: 4px solid var(--color-primary);">
+                        <h3 style="color: var(--color-primary); color: #fff;">Our Mission</h3>
+                        <p style="opacity: 0.9;">To provide a stimulating learning environment that fosters critical thinking, intellectual discovery, holistic development, and strong moral values, enabling students to realize their full potential and build resilience.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="academics" class="content-section">
+                <h2>Academics & Holidays</h2>
+                <p>At New Sainik Public School, we ensure a well-structured academic year. Below is the list of holidays for the academic session 2026-27.</p>
+                
+                <div style="overflow-x: auto; margin-top: 2rem;">
+                    <style>
+                        .holiday-table th { background: var(--color-primary-dark); color: #fff; padding: 1.2rem 1rem; text-align: left; font-family: var(--font-heading); }
+                        .holiday-table td { padding: 1rem; border-bottom: 1px solid rgba(0,0,0,0.05); }
+                        .holiday-table tr { background: var(--color-base); transition: background 0.2s ease; }
+                        .holiday-table tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+                        .holiday-table tr:hover { background: rgba(0,0,0,0.05); }
+                    </style>
+                    <table class="holiday-table" style="width: 100%; border-collapse: collapse; box-shadow: var(--shadow-diffused); border-radius: var(--radius-sm); overflow: hidden;">
+                        <thead>
+                            <tr>
+                                <th>Sl. No.</th>
+                                <th>Holiday</th>
+                                <th>Date</th>
+                                <th>Day</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td style="font-weight: 500;">Good Friday</td><td>03 April 2026</td><td>Friday</td></tr>
+                            <tr><td>2</td><td style="font-weight: 500;">Dr. BR Ambedkar Jayanti</td><td>14 April 2026</td><td>Tuesday</td></tr>
+                            <tr><td>3</td><td style="font-weight: 500;">Eid-ud-Juha(Bakrid)</td><td>27 May 2026</td><td>Wednesday</td></tr>
+                            <tr><td>4</td><td style="font-weight: 500;">Moharram</td><td>26 June 2026</td><td>Friday</td></tr>
+                            <tr><td>5</td><td style="font-weight: 500;">Raksha Bandhan</td><td>28 August 2026</td><td>Friday</td></tr>
+                            <tr><td>6</td><td style="font-weight: 500;">Janmashtami</td><td>4 September 2026</td><td>Friday</td></tr>
+                            <tr><td>7</td><td style="font-weight: 500;">Gandhi Jayanti</td><td>02 October 2026</td><td>Friday</td></tr>
+                            <tr><td>8</td><td style="font-weight: 500;">Dussehra</td><td>20 October 2026</td><td>Tuesday</td></tr>
+                            <tr><td>9</td><td style="font-weight: 500;">Diwali</td><td>08 Nov - 11 Nov 2026</td><td>-</td></tr>
+                            <tr><td>10</td><td style="font-weight: 500;">Christmas Day</td><td>25 December 2026</td><td>Friday</td></tr>
+                            <tr><td>11</td><td style="font-weight: 500;">Makar Shankranti</td><td>15 January 2027</td><td>Friday</td></tr>
+                            <tr><td>12</td><td style="font-weight: 500;">Basant Panchami</td><td>11 February 2027</td><td>Thursday</td></tr>
+                            <tr><td>13</td><td style="font-weight: 500;">Maha Shivratri</td><td>06 March 2027</td><td>Saturday</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="student-life" class="content-section">
+                <h2>Student Life & Discipline</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+                    <div>
+                        <img src="assets/images/students_walking.jpg" alt="Students walking in discipline" style="width: 100%; border-radius: var(--radius-sm); margin-bottom: 1rem; box-shadow: var(--shadow-diffused);">
+                        <p>Our students embody discipline and order, ensuring a safe and respectful environment as they move through our campus.</p>
+                    </div>
+                    <div>
+                        <img src="assets/images/teacher_students.jpg" alt="Interactive learning with teacher" style="width: 100%; border-radius: var(--radius-sm); margin-bottom: 1rem; box-shadow: var(--shadow-diffused);">
+                        <p>We believe in interactive and collaborative learning. Our faculty engage closely with students to nurture curiosity and academic excellence.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="directors" class="content-section">
+                <h2>Directors' Message</h2>
+                <div class="principal-desk">
+                    <div class="profile-card">
+                        <div class="profile-img-wrapper">
+                            <img src="assets/images/director_new.png" alt="Directors Pradeep Kumar Pathak & Maya Pathak">
+                        </div>
+                        <div class="profile-content text-center" style="text-align: center;">
+                            <h3 class="profile-name" style="font-size: 1.3rem;">Pradeep Kumar Pathak &amp; Maya Pathak</h3>
+                            <p class="profile-role">Directors</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="font-family: var(--font-heading); color: var(--color-primary-dark); font-size: 1.8rem; margin-bottom: 1rem; font-style: italic;">"A living sanctuary for building character and enriching minds."</h3>
+                        <p>Dear Parents, welcome to New Sainik Public School—a space where potential meets opportunity. An educational institute is not merely defined by its bricks, mortar, and concrete; it is a living sanctuary for building character, enriching minds, and providing experiences that last a lifetime.</p>
+                        <p>Our mission remains steadfast: to provide a vibrant and conducive environment for continuous learning. We are sincerely committed to nurturing an emerging generation that possesses a global perspective and a heart for service.</p>
+                        <p>To our students: I challenge you to look beyond the curriculum. Seek excellence not just in your academic grades, but in your human virtues—creativity, brotherhood, patriotism, and discipline. Your journey at our school is the foundation of your future. Let us work together to ensure that every day spent within these walls is a step toward becoming a positive contributor to the world.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="principal" class="content-section">
+                <h2>From the Principal's Desk</h2>
+                <div class="principal-desk">
+                    <div class="profile-card">
+                        <div class="profile-img-wrapper">
+                            <img src="assets/images/principal.jpeg" alt="Principal C.S Garg">
+                        </div>
+                        <div class="profile-content text-center" style="text-align: center;">
+                            <h3 class="profile-name">C.S Garg</h3>
+                            <p class="profile-role">Principal</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="font-family: var(--font-heading); color: var(--color-primary-dark); font-size: 1.8rem; margin-bottom: 1rem; font-style: italic;">"Nurturing Vision, Excellence, and Discovery in every child."</h3>
+                        <p>Welcome to New Sainik Public School. Our mission is deeply rooted in our core philosophy: <strong>VED (Vision, Excellence, Discovery)</strong>. We believe that true education goes beyond textbooks; it is about building character, instilling patriotism, and fostering discipline.</p>
+                        <p>Our dedicated faculty works tirelessly to ensure that our curriculum is engaging and relevant. We provide a holistic environment where every student is encouraged to explore their potential, build resilience, and develop the critical thinking skills needed for the future.</p>
+                        <p>I invite you to explore our campus and discover the myriad opportunities that await your child at our school.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="coordinator" class="content-section">
+                <h2>Coordinator</h2>
+                <div class="principal-desk">
+                    <div class="profile-card">
+                        <div class="profile-img-wrapper">
+                            <img src="assets/images/coordinator.jpeg" alt="Coordinator R.N Kushwaha">
+                        </div>
+                        <div class="profile-content text-center" style="text-align: center;">
+                            <h3 class="profile-name">R.N Kushwaha</h3>
+                            <p class="profile-role">Coordinator</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="font-family: var(--font-heading); color: var(--color-primary-dark); font-size: 1.8rem; margin-bottom: 1rem; font-style: italic;">"Guiding our students toward a path of discipline and academic brilliance."</h3>
+                        <p>As the Coordinator of New Sainik Public School, I am dedicated to ensuring the smooth operation of our academic and co-curricular programs. My focus is on creating a supportive framework that empowers both our students and faculty to excel.</p>
+                        <p>By fostering a collaborative environment, we ensure that every student's individual needs are met, aligning perfectly with our core values of Vision, Excellence, and Discovery.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer (Same as index) -->
+    <footer class="main-footer">
+        <div class="footer-watermark">S</div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo-container" style="margin-bottom: 1.5rem;">
+                        <img src="assets/images/logo.jpeg" alt="New Sainik Public School Logo" style="width: 50px; height: 50px; object-fit: contain; border-radius: 5px;">
+                        <div class="logo-text">
+                            <h2 style="color: var(--color-base); margin: 0; font-size: 1.5rem;">New Sainik</h2>
+                            <p style="color: var(--color-accent);">Public School</p>
+                        </div>
+                    </div>
+                    <p style="opacity: 0.8; max-width: 300px;">Nurturing minds, building character, and shaping the future leaders of our nation.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#academics">Academics</a></li>
+                        <li><a href="contact.html">Admissions</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="index.html#transport">Transport</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li>Bajrang Chauraha, Siyarpaha Gudhankalan<br>Naraini, Banda-210129</li>
+                        <li style="margin-top: 1rem;">Phone: +91 78872 99111<br>+91 91983 43345</li>
+                        <li>Email: pathakpradeep2010@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 New Sainik Public School. All rights reserved. Designed with precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple active state toggler for sidebar
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.sidebar-nav a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
