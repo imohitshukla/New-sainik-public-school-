@@ -447,10 +447,8 @@
 <div class="gallery-item" data-category="classroom" onclick="openLightbox('assets/images/classroom_new_2.jpeg', '')" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;">
 <img alt="Geography Globe Session" loading="lazy" onmouseout="this.style.transform='scale(1)'" onmouseover="this.style.transform='scale(1.05)'" src="assets/images/classroom_new_2.jpeg" style="width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease;"/>
 </div>
-<div class="gallery-item" data-category="classroom" onclick="openLightbox('assets/images/classroom_new_3.jpeg', '')" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;">
-<img alt="Geography Globe Session" loading="lazy" onmouseout="this.style.transform='scale(1)'" onmouseover="this.style.transform='scale(1.05)'" src="assets/images/classroom_new_3.jpeg" style="width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease;"/>
-</div>
-<div class="gallery-item" data-category="classroom" onclick="openLightbox('assets/images/classroom_new_4.jpeg', '')" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;">
+
+<div class="gallery-item" data-category="classroom" onclick="openLightbox('assets/images/classroom_new_4.jpeg', 'Ear Lesson')" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;">
 <img alt="Biology Ear Model" loading="lazy" onmouseout="this.style.transform='scale(1)'" onmouseover="this.style.transform='scale(1.05)'" src="assets/images/classroom_new_4.jpeg" style="width: 100%; height: 250px; object-fit: cover; display: block; transition: transform 0.4s ease;"/>
 </div>
 <div class="gallery-item" data-category="classroom" onclick="openLightbox('assets/images/classroom_new_5.jpeg', '')" style="border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-diffused); background: var(--color-base); cursor: pointer;">
@@ -596,7 +594,7 @@
 <div id="lightbox" style="display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
 <span onclick="closeLightbox()" style="position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000;">×</span>
 <img alt="Enlarged school image" id="lightbox-img" src="" style="max-width: 90%; max-height: 90%; object-fit: contain; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
-<div id="lightbox-caption" style="display: none;"></div>
+<div id="lightbox-caption" style="position: absolute; bottom: 30px; color: white; font-size: 1.2rem; text-align: center; width: 100%;"></div>
 </div>
 <script>
         // Gallery Filter Logic
